@@ -1,0 +1,30 @@
+{
+  "name": "mujeres",
+  "description": "Blog mujeres tea",
+  "author": "YerkoPalma",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "standard --verbose | snazzy && tape test.js | tap-summary",
+    "dev": "micro-dev . -p 8080",
+    "start": "micro -l tcp://0.0.0.0:${PORT-8080}"
+  },
+  "repository": "YerkoPalma/mujeres",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "micro-dev": "^3.0.0",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.1",
+    "tap-summary": "^4.0.0",
+    "tape": "^4.13.0",
+    "test-listen": "^1.1.0"
+  },
+  "dependencies": {
+    "micro": "^9.3.4",
+    "micro-fork": "^3.0.0"
+  }
+}
