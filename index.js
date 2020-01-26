@@ -1,7 +1,16 @@
-const { router, get, post } = require('micro-fork')
-const { getUsers, createUsers } = require('./routes/user')
+const { router } = require('micro-fork')
+const handler = require('serve-handler')
+const { routes } = require('./api/index.js')
 
-module.exports = router()(
-  get('/api/user', getUsers),
-  post('/api/user', createUsers)
-)
+const options = {
+  public: 'public',
+  directoryListing: false
+}
+
+const defaultPages = async (req, res) => {
+  await handler(req, res, options)
+}
+
+module.exports = router({
+  defaultRoute: defaultPages
+}).apply(null, routes)

@@ -8,23 +8,32 @@
     "index.js"
   ],
   "scripts": {
-    "test": "standard --verbose | snazzy && tape test.js | tap-summary",
-    "dev": "micro-dev . -p 8080",
-    "start": "micro -l tcp://0.0.0.0:${PORT-8080}"
+    "start": "micro -l tcp://0.0.0.0:${PORT-8080}",
+    "dev": "rollup -c && micro-dev . -p 8080",
+    "test": "standard --verbose | snazzy && tape test/**/*.js | tap-summary",
+    "lint": "standard --fix"
   },
   "repository": "YerkoPalma/mujeres",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "axios": "^0.19.2",
     "micro-dev": "^3.0.0",
+    "rollup": "^1.29.1",
+    "rollup-plugin-livereload": "^1.0.4",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
     "snazzy": "^8.0.0",
     "standard": "^14.3.1",
+    "svelte": "^3.18.0",
     "tap-summary": "^4.0.0",
     "tape": "^4.13.0",
     "test-listen": "^1.1.0"
   },
   "dependencies": {
     "micro": "^9.3.4",
-    "micro-fork": "^3.0.0"
+    "micro-fork": "^3.0.0",
+    "serve-handler": "^6.1.2"
   }
 }

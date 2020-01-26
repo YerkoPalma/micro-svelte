@@ -1,7 +1,7 @@
 const { send, json } = require('micro')
 
 // initiallise session
-let users = []
+const users = []
 
 exports.getUsers = (req, res) => send(res, 200, users)
 
