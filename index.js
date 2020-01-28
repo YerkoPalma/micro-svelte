@@ -7,10 +7,10 @@ const options = {
   directoryListing: false
 }
 
-const defaultPages = async (req, res) => {
+const defaultRoute = async (req, res) => {
   await handler(req, res, options)
 }
 
 module.exports = router({
-  defaultRoute: defaultPages
+  defaultRoute
 }).apply(null, routes)
