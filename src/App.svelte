@@ -1,5 +1,6 @@
 <script>
   export let name
+  import { users } from './store'
   import New from './components/New.svelte'
   import List from './components/List.svelte'
 </script>
@@ -9,6 +10,7 @@
   <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
   <New />
   <List />
+  <p>{$users.length} total users</p>
 </main>
 
 <style>

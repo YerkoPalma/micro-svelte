@@ -1,10 +1,16 @@
 <script>
-  let users = []
+  import { users } from '../store.js'
+
+  (async () => {
+    const res = await fetch('/api/user')
+    const json = await res.json()
+    users.set(json)
+  })()
 </script>
 <div>
-  {#if users.length > 0}
+  {#if $users && $users.length > 0}
     <ul>
-      {#each users as user}
+      {#each $users as user}
         <li>{user}</li>
       {/each}
     </ul>
