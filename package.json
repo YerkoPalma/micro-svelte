@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "start": "micro -l tcp://0.0.0.0:${PORT-8080}",
+    "start": "micro -l tcp://0.0.0.0:8080",
     "dev": "rollup -c && micro-dev . -p 8080",
     "test": "standard --verbose | snazzy && tape test/**/*.js | tap-summary",
     "lint": "standard --fix"

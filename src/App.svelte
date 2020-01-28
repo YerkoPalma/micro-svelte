@@ -1,10 +1,14 @@
 <script>
-  export let name;
+  export let name
+  import New from './components/New.svelte'
+  import List from './components/List.svelte'
 </script>
 
 <main>
   <h1>Hello {name}!</h1>
   <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <New />
+  <List />
 </main>
 
 <style>
