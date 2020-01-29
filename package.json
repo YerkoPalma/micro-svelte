@@ -15,7 +15,9 @@
   },
   "repository": "YerkoPalma/mujeres",
   "license": "MIT",
-  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
+  "setupFilesAfterEnv": [
+    "@testing-library/jest-dom/extend-expect"
+  ],
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",

@@ -5,14 +5,14 @@ import { render, fireEvent } from '@testing-library/svelte'
 
 import NewComponent from '../src/components/New'
 
-test('Store starts blank', () => {
+test.skip('Store starts blank', () => {
   const { getByText } = render(NewComponent, { name: 'World' })
 
   expect(getByText('Hello World!')).toBeInTheDocument()
 })
 
 // Note: This is as an async test as we are using `fireEvent`
-test('changes button text on click', async () => {
+test.skip('changes button text on click', async () => {
   const { getByText } = render(NewComponent, { name: 'World' })
   const button = getByText('Button')
 
