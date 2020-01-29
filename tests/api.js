@@ -1,13 +1,11 @@
 /* eslint-env jest */
-// const test = require('tape')
-// const micro = require('micro')
-// const axios = require('axios')
-import api from '../api'
+import api from '..'
 import micro from 'micro'
 import axios from 'axios'
 
 let server
-axios.defaults.baseURL = 'http://0.0.0.0:8080'
+axios.defaults.adapter = require('axios/lib/adapters/http')
+axios.defaults.baseURL = 'http://localhost:8080'
 
 beforeAll(() => {
   server = micro(api)
