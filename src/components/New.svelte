@@ -1,6 +1,7 @@
 <script>
   import { users } from '../store.js'
   let form
+  let name = ''
 
   async function onSubmit (event) {
     const formData = new FormData(form)
@@ -18,11 +19,12 @@
         u = [...u, formData.get('name')]
         return u
       })
+      name = ''
     }
   }
 </script>
 
 <form bind:this={form} on:submit|preventDefault ={onSubmit}>
-  <input type="text" placeholder="User name..." name="name" id="name"/>
+  <input bind:value={name} type="text" placeholder="Name" name="name" id="name"/>
   <button type="submit">Add</button>
 </form>
